@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>a2z</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  
+  <a class="navbar-brand" href="#"></a>
+<!-- A2zgoogle One Shop Stop Solution  -->
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/a2zgoogle}">eCommerce</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/a2zgoogle}">Education</a>
+      </li>
+    				<li class="nav-item" ,class="item-right">
+
+<style>
+  .speech {
+    border: 1px solid #ddd;
+    width: 300px;
+    padding: 0;
+    margin: 0;
+  }
+  .speech input {
+    border: 0;
+    width: 240px;
+    display: inline-block;
+    height: 30px;
+  }
+  .speech img {
+    float: right;
+    width: 40px;
+  }
+</style>
+
+<!-- Search Form -->
+<form id="labnol" method="get" action="https://www.google.com/search">
+  <div class="speech"    class ="gcse-search" >
+    <input type="text" name="q" id="transcript"
+    
+     placeholder="Google Search" />
+   
+    <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
+    
+   		
+  </div>
+</form>
+  
+
+<!-- HTML5 Speech Recognition API -->
+<script>
+  function startDictation() {
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = 'en-US';
+      recognition.start();
+
+      recognition.onresult = function (e) {
+        document.getElementById('transcript').value = e.results[0][0].transcript;
+        recognition.stop();
+        document.getElementById('labnol').submit();
+      };
+
+      recognition.onerror = function (e) {
+        recognition.stop();
+      };
+    }
+  }
+</script>
+  
+</li>
+    
+    
+     
+    
+    <li>
+  <button type="submit" class ="gcse-search">
+						Search
+							</button>
+</li>
+     
+    
+    
+    
+	
+    
+    
+     <li> 
+      <a th:href = "@{/a2zgoogle/sub}" class = "btn btn-primary btn-sm mb-3">Sign Up</a>
+    </li> 
+    </ul>
+    
+    
+  </div>
+</nav>
+
+<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Sign Up </h1>
+				<div class = "card-body">
+					<form th:action="@{/a2zgoogle}" th:object = "${a2zgoogle}" method="POST">
+						<div class ="form-group">
+							<label> Full Name </label>
+							<input
+							type = "text"
+							name = "firstName"
+							th:field = "*{firstName}"
+							class = "form-control"
+							placeholder="Enter Full Name" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> Email </label>
+							<input
+							type = "text"
+							name = "email"
+							th:field = "*{email}"
+							class = "form-control"
+							placeholder="Enter Email/Phone Number" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> Enter password </label>
+							<input
+							type = "text"
+							name = "password"
+							th:field = "*{password}"
+							class = "form-control"
+							placeholder="Enter Student Last Name" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> Confirm password </label>
+							<input
+							type = "text"
+							name = "confirmpassword"
+							th:field = "*{confirmpassword}"
+							class = "form-control"
+							placeholder="Enter Student Last Name" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> url </label>
+							<input
+							type = "text"
+							name = "url"
+							th:field = "*{url}"
+							class = "form-control"
+							placeholder="Enter url" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> usr_ctr </label>
+							<input
+							type = "text"
+							name = "catagory"
+							th:field = "*{catagory}"
+							class = "form-control"
+							placeholder="Enter User catagory" 
+							/>
+						</div>
+											
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

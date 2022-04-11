@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>a2z</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style id="compiled-css" type="text/css">
+        body {
+            width: 100%;
+            max-width: 1030px;
+            font-family: Arial Narrow;
+        }
+
+        #myInput {
+            box-sizing: border-box;
+            height: 50px;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px solid rgb(56, 55, 55);
+        }
+
+        img {
+            height: 50px;
+            width: 50px;
+            vertical-align: baseline;
+        }
+
+        .nav {
+            text-align: center;
+            margin-left: 10px;
+            width: 100%;
+            vertical-align: baseline;
+
+        }
+
+        .table {
+            border-collapse: collapse;
+            
+        }
+
+        #th {
+            background-color: red;
+        }
+
+        #a {
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(253, 252, 252);
+
+        }
+        img#srch{
+            border-bottom: 2px solid rgb(56, 55, 55);
+            border-right:2px solid rgb(56, 55, 55);
+        }
+        img#cust{
+           margin-left: 600px;
+           height: 200px;
+           width: 500px;
+        }
+
+        #button {
+            width: 150px;
+            height: 40px;
+        }
+        .sidenav{
+            transform: translate(10px,250px);
+            font-size: 25px;
+        }
+
+        .field{
+            
+            margin-left: 200px;
+            height: 500px;
+            width: 1100px;
+            border: 3px solid black;
+            background-color: rgb(202, 201, 201);
+        }
+        #a2{
+            text-decoration: none;
+            font-size: 18px;
+            background-color: gray;
+            color: rgb(252, 252, 252);
+            padding: 10px;
+            border: 2px solid black;
+            border-top-right-radius: 35px;
+        }
+        #divtable{
+            transform: translate(50%,-10%);
+        }
+        #divcheckbox1{
+            transform: translate(0%,-200%);
+        }
+        #divcheckbox{
+            transform: translate(94%,80%); 
+        }
+
+    </style>
+</head>
+
+<body>
+        <nav class="nav">
+
+            <table class="table" style="width: 175%;">
+                <th id="th" style="width: 6%;"><a id="a" style="margin-left: 10px;" href="#">e-commerce</a></th>
+                <th id="th"><a id="a" href="#">Travels</a></th>
+                <th id="th"><a id="a" href="#">News</a></th>
+                <th id="th"><a id="a" href="#">Education</a></th>
+                <th id="th"><a id="a" href="#">Banking</a></th>
+                <th id="th"><a id="a" href="#">Tradings</a></th>
+                <th id="th"><a id="a" href="#">Job Portals</a></th>
+                <th id="th"><a id="a" href="#">Health</a></th>
+                <th id="th"><a id="a" href="#">Insurence</a></th>
+                <th id="th"><a id="a" id="a" href="#">Social Sites</a></th>
+                <th id="th"><a id="a" href="#">Emails</a></th>
+                <th id="th"><a id="a" href="#">Contact Us</a></th>
+                <th id="th"><a id="a" href="#">Sign in</a></th>
+                <th id="th"><a id="a" href="#">Registration</a></th>
+                <th id="th"><a id="a" href="#">careers</a></th>
+                <td><img src="search.png" id="srch"></td>
+                <td style="width:70px;"><input type="text" id="myInput" name="q" placeholder="Search"></td>
+                <td><input type="radio" class="inline" name="Search"  value="google"></td>
+                <td><img src="google.jpg"></td>
+                <td><input type="radio" class="inline" name="Search"  value="yahoo"></td>
+                <td><img src="images.jpg"></td>
+                <td><input type="radio" class="inline" name="Search"  value="bing"></td>
+                <td><img src="bing.png"></td>
+                <td><input id="button" type="button" value="Search" onclick="search()">
+
+                    <script>
+                        function search() {
+                        var ele = document.getElementsByName('Search');
+                        var query=document.getElementById("myInput").value;
+                        for(i = 0; i < ele.length; i++) 
+                        {
+                          if(ele[i].checked){
+                                  if(ele[i].value=="google")
+                                  {
+                                    
+                                    url ='http://www.google.com/search?q='+ query;
+                                    window.open(url,'_self');
+                                  }
+                                  else if(ele[i].value=="yahoo")
+                                  {
+                                    url ='http://www.yahoo.com/search?q='+ query;
+                                    window.open(url,'_self');  
+                                  }
+                                  else if(ele[i].value=="bing")
+                                  {
+                                    url ='http://www.bing.com/search?q='+ query;
+                                    window.open(url,'_self');
+                                     
+                                  }
+                                  }
+
+                        }
+                        
+                        }
+                    </script>
+            </table>
+            
+            
+        </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="https://www.amazon.com/">www.amazon.in</a><br>
+            <a href="https://www.amazon.com/">www.amazon.in</a><br>
+            <a href="https://www.google.com/">google.com</a><br>
+            <a href="https://www.google.com/">www.google.com</a><br>
+        </div>
+        <img src="Customer.PNG" id="cust"><br><br>
+        <div class="form">
+        <form action="">
+            <fieldset class="field">
+             <legend><nav id="nav2">
+                <a id="a2" href="#">Request</a>
+                <a id="a2" href="#">Response</a>
+                <a id="a2" href="#">Profile</a>
+                <a id="a2" href="#">Admin</a>  
+            </nav></legend>
+            <br><br>
+            <label style="margin-left: 50px;">Call me as</label><input type="text" id="myInput2" placeholder="name" style="margin-left: 152px;"><br><br>
+            <label style="margin-left: 50px;">My email id</label><input type="email" id="myInput3" placeholder="email" style="margin-left: 147px;">
+            <label style="margin-left:150px;">Call me at</label>&nbsp;&nbsp;<input type="text" id="myInput2" placeholder="time"><br><br>
+            <label style="margin-left: 50px;">Address</label><textarea id="textarea" name="textarea" rows="4" cols="50" style="margin-left: 165px;"></textarea><br><br>
+            <label style="margin-left: 50px;">I wanted to buy</label><input type="text" name="buy" list="buy" style="margin-left: 124px;">
+            <button id="select">Select<datalist id="buy">
+            <option value="option1">
+            <option value="option2">
+            <option value="option3">
+            </datalist>
+            </button>
+
+            <div id="divcheckbox">
+                <input type="checkbox" id="check4">I agree <br>to<br> generate  <br>terms and  <br>conditions<br><br>
+                <input type="submit" id="submit1" value="submit">
+            </div>
+
+            <div id="divtable"><table border="1px" style="width: 130px;" >
+                <tr>
+                <th style="background-color: rgb(89, 253, 231);">About Item</th>
+                </tr>
+                <tr style="height: 20px;">
+                    <td style="background-color: rgb(255, 255, 255);">     </td>
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(255, 255, 255);">Model No.</td>
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(255, 255, 255);">Brand</td>
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(255, 255, 255);">Color</td>
+                </tr>
+            </table></div>
+            <div id="divcheckbox1">
+                <input type="checkbox" id="check1" style="margin-left: 260px;">How much does this cost for me<br>
+                <input type="checkbox" id="check2" style="margin-left: 260px;">You can call me<br>
+                <input type="checkbox" id="check3" style="margin-left: 260px;">I can wait till &nbsp;<input type="date" id="date">
+                </div>
+            
+            
+
+            </fieldset>
+        </div>
+</body>
+
+</html>

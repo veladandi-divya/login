@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>a2z</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  
+  <a class="navbar-brand" href="#"></a>
+<!-- A2zgoogle One Shop Stop Solution  -->
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/a2zgoogle}">eCommerce</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/a2zgoogle}">Education</a>
+      </li>
+      <li class="nav-item",class="item-right">
+      <form action ="https://google.com/search" method ="GET">
+    
+      <input   tyepe="text" name="q" placeholder="Google Search">
+      <input   tyepe="text" type= "submit" value="GS">
+     </li>
+      </form>
+    <!--  <li> 
+      <a th:href = "@{/a2zgoogle/sub}" class = "btn btn-primary btn-sm mb-3">Sign Up</a>
+    </li> -->
+    </ul>
+    
+    
+  </div>
+</nav>
+
+<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Sign Up </h1>
+				<div class = "card-body">
+					<form th:action="@{/a2zgoogle}" th:object = "${a2zgoogle}" method="POST">
+						<div class ="form-group">
+							<label> Full Name </label>
+							<input
+							type = "text"
+							name = "firstName"
+							th:field = "*{firstName}"
+							class = "form-control"
+							placeholder="Enter Full Name" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> Email </label>
+							<input
+							type = "text"
+							name = "email"
+							th:field = "*{email}"
+							class = "form-control"
+							placeholder="Enter Email/Phone Number" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> Enter password </label>
+							<input
+							type = "text"
+							name = "lastName"
+							th:field = "*{lastName}"
+							class = "form-control"
+							placeholder="Enter Student Last Name" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> Conform password </label>
+							<input
+							type = "text"
+							name = "lastName"
+							th:field = "*{lastName}"
+							class = "form-control"
+							placeholder="Enter Student Last Name" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> url </label>
+							<input
+							type = "text"
+							name = "url"
+							th:field = "*{url}"
+							class = "form-control"
+							placeholder="Enter url" 
+							/>
+						</div>
+						<div class ="form-group">
+							<label> usr_ctr </label>
+							<input
+							type = "text"
+							name = "catagory"
+							th:field = "*{catagory}"
+							class = "form-control"
+							placeholder="Enter User catagory" 
+							/>
+						</div>
+											
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
